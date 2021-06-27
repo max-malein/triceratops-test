@@ -1,51 +1,23 @@
-# Example Website
+# Examples
 
-This is a simple website that demonstrates how to load your 3d model as a three.js scene.
+The following example scenes are set up in Rhino/Grasshopper to export 3d model JSON files to the example website located in the subfolder ```www```. This simple website can be served locally for testing what the finished 3d model looks like rendered on the three.js canvas.
 
-## Swapping out models
+Thanks [texturehaven.com](https://texturehaven.com/) for supplying the free PBR textures.
 
-By default, the example site loads ```house.json```. To update this to open a new model open Triceratops/examples/app.js and replace ```house.json``` with the name of the json file you would like to load.
-```
-loader.load(
-  // resource URL
-  "./assets/[yourModelFile].json",
-```
+## Example Scene
 
-## Testing with the Example Website
+The example scene demonstrates how to export meshes with various materials and settings.
 
-You might be used to testing a simple static website simply by opening the html file in your browser. However, because three.js loads a JSON from JavaScript, your browser's CORS policy will likely reject the request. You will need to launch a server using the following steps.
+![example scene](../assets/example_scene_0.png)
 
-### For Windows
-#### Step 1
-Search for Rhinoceros in the Windows search bar. When you see the Rhinoceros icon right click on it and select "Run as administrator".
+## Chair
 
-#### Step 2
-Launch grasshopper and then navigate to Triceratops > File Management. Drag the HTTPServer ![HTTPServer](../../assets/icons/Tri_HTTPServer.png) component onto the Grasshopper canvas. The example files already have this component set up on the Grasshopper canvas.
+This example demonstrates some basic texture mapping.
 
-#### Step 3
-The ```Path(P)``` input should be a string of the path to the directory where your index.html is located. The ```Run(R)``` should take a boolean toggle as an input.
+![example scene](../assets/chair.png)
 
-#### Step 4
-Toggle the boolean toggle to true and the server should start running and open a new tab in your browser with the website you're serving.
+## House
 
-#### Step 5
-Whenever you export a new version of the 3d model from Triceratops, refresh the page to reload the latest version of your model.
+This example shows how various geometry types and lighting can work together to create an architectural scene.
 
-
-### For Mac
-#### Step 1
-Use finder to navigate to your websites root folder (i.e. where index.html is located). For the Triceratops example files this is ```../Triceratops/examples/www```. Right click on the folder and click ```New Terminal at folder``` to open the terminal in this location.
-
-#### Step 2
-In the terminal, type ```python3 -m http.server 8000``` into the terminal and press enter (or if you're using python 2 type ```python -m simpleHTTPServer 8000```).
-
-Python will launch a server and give you a message like this:
-```
-Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-```
-
-#### Step 3
-Open your favorite browser and in the search bar type ```localhost:8000```. Press enter and your website should open.
-
-#### Step 4
-Whenever you export a new version of the 3d model from Triceratops, refresh the page to reload the latest version of your model.
+![example scene](../assets/house.png)
